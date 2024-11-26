@@ -539,7 +539,7 @@ def git_update(repo, is_no_errors=False, is_current_dir=False, git_owner=""):
     branch_to_checkout = re.sub(unlimited_tag_suffix, '', config.option("branch"))
 
   url = "https://github.com/" + owner + "/" + repo + ".git"
-<<<<<<< HEAD
+
   if git_is_ssh():
     url = "git@github.com:" + owner + "/" + repo + ".git"
 
