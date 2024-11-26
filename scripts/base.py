@@ -500,9 +500,9 @@ def git_update(repo, is_no_errors=False, is_current_dir=False, git_owner=""):
   print("[git] update: " + repo)
   owner = git_owner if git_owner else "ONLYOFFICE"
 
-  unlimited_organization = "btactic-oo"
-  unlimited_tag_suffix = "-btactic"
-  unlimited_modified_repos = ["server", "web-apps"]
+  unlimited_organization = "eshaan-sharma"
+  unlimited_tag_suffix = "-esdnc"
+  unlimited_modified_repos = ["server", "web-apps","sdkjs"]
   if (repo in unlimited_modified_repos):
     owner = unlimited_organization
     branch_to_checkout = config.option("branch")
