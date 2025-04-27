@@ -528,7 +528,7 @@ def git_is_ssh():
   if (git_protocol == "ssh"):
     return True
   origin = git_get_origin()
-  if (git_protocol == "auto") and (origin.find(":ONLYOFFICE/") != -1):
+  if (git_protocol == "auto") and (re.search(r'^git@', origin) != None):
     return True
   return False
 
@@ -626,7 +626,7 @@ def create_pull_request(branches_to, repo, is_no_errors=False, is_current_dir=Fa
   print("[git] create pull request: " + repo)
   url = "https://github.com/ONLYOFFICE/" + repo + ".git"
   if git_is_ssh():
-    url = get_ssh_base_url() + repo + ".git"
+    url = "git@github.com:" + owner + "/" + repo + ".git"
   folder = get_script_dir() + "/../../" + repo
   if is_current_dir:
     folder = repo
